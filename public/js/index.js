@@ -6,7 +6,7 @@ $(document).ready(function () {
 
     $('.event-image').css('height', '150px');
 
-    $('#videoFrame').css('width',(window.innerWidth - 15) + 'px');
+    $('#videoFrame').css('width',$('#frmImg').css('width'));
     $('#videoFrame').css('height',(window.innerWidth * (9 / 16)) + 'px');
 
     $(window).on("resize", function () {
