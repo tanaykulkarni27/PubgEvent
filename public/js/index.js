@@ -16,17 +16,14 @@ $(document).ready(function () {
     $(".owl-carousel").owlCarousel({
         autoplay: true,
         slideSpeed: 500,
-        items: 3,
+        items: 1,
         loop: false,
         nav: true,
         navText: ['<i class="fa fa-arrow-left"></i>', '<i class="fa fa-arrow-right"></i>'],
-        margin: 30,
+        margin: 0,
         dots: true,
         responsive: {
-            320: {
-                items: 1
-            },
-            767: {
+            800: {
                 items: 2
             },
             1000: {
