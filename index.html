@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PUBG Event Registration</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Teko">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+
+
+    <!-- Latest version of jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"
+        integrity="sha512-gY25nC63ddE0LcLPhxUJGFxa2GoIyA5FLym4UJqHDEMHjp8RET6Zn/SHo1sltt3WuVtqfyxECP38/daUc/WVEA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="./public/css/index.css">
+    <script src="./public/js/index.js"></script>
+</head>
+
+<body>
+    <!-- nav bar -->
+    <div class="nav">
+        <img src="https://www.battlegroundsmobileindia.com/common/img/common/logo.png" class="brandLogo" />
+        <div style="width: calc(100% - 190px); display: flex; justify-content: center;font-size: 35px;">
+            <div>The Ultimate BGMI Showdown</div>
+        </div>
+    </div>
+    <div class="event_details_container">
+        <img id="frmImg" />
+        <div class="overlay">
+            <div style="position: absolute;top: 0px;width: 100%;">
+                <div class="bannerContainer">
+                    <div class="bannerContent">
+                        <div style="display: flex;justify-content: center;">
+                            <h1 style="color: white;"> Rise to Victory</h1>
+                        </div>
+                        <center>
+                            <p style="padding: 30px;font-size: 20px;">Are you ready to step onto the battlegrounds
+                                of BGMI and prove your mettle? The Ultimate BGMI Challenge is here to push your
+                                skills to the limit. Gather your squad, load your weapons, and embark on an
+                                unforgettable gaming journey.</p>
+                        </center>
+                    </div>
+                    <div class="form-container bannerContent" style="visibility: hidden;">
+                        <div class="form">
+                            <label for="phoneNumber">Mobile Number:</label><br>
+                            <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="phoneNumber"
+                                required><br>
+                            <label for="fees">Fees(Rs):</label><br>
+                            <input type="text" id="fees" name="fees" value="100" style="background-color: white;"
+                                disabled><br>
+                            <button onclick="registerEvent('Price')">Register</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+
+        <iframe id="videoFrame"
+            src="https://www.youtube.com/embed/fDLAFIhfFy4?si=WzzRCKY0VHXpt0MW&amp;controls=0&amp;start=31"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen></iframe>
+
+    </div>
+    <center><h1 style="margin-left: 25px;font-size: 50px;">Events</h1></center>
+    <div class="owl-carousel" style="width: 97%;padding: 20px;">
+        <div class="item event-card">
+
+            <img src="./public/images/banner_mob.jpg" alt="Event Image" class="event-image">
+            <div class="event-title">Battle Event</div>
+            <div class="event-date">Date: July 15, 2023</div>
+            <div class="event-description">
+                Join us for an exciting event filled with fun activities and great entertainment. Don't miss out!
+            </div>
+            <button id="gotoReg" data-custom-value="500" class="event-button">Register Now</button>
+        </div>
+    </div>
+</body>
+
+</html>
