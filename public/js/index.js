@@ -76,7 +76,7 @@ function registerEvent(Price,Event){
 function AddAcc(){
 
     $.ajax({
-        url:'./userhandler/api',
+        url:'/userhandler/api',
         data:{
             Phonenumber: $('#phoneNumber').val(),
             eventId : $('#EventName').val()
