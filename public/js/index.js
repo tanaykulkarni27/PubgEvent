@@ -49,7 +49,7 @@ $(document).ready(function () {
                 $('.owl-carousel').empty();
                 data.forEach(function (event) {
                     var eventCard = '<div class="item event-card">' +
-                        '<img src="' + event.EventImage + '" alt="Event Image" class="event-image">' +
+                        '<img src="data:image/gif;base64,' + event.EventImage + '" alt="Event Image" class="event-image">' +
                         '<div class="event-title">' + event.Title + '</div>' +
                         '<div class="event-date">Date: ' + event.Schedule + '</div>' +
                         '<div class="event-description">' + event.Descript + '</div>' +
