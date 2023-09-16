@@ -1,0 +1,29 @@
+{
+  "name": "eventregistration",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/tanaykulkarni27/PubgEvent.git"
+  },
+  "author": "TanayKulkarni",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tanaykulkarni27/PubgEvent/issues"
+  },
+  "homepage": "https://github.com/tanaykulkarni27/PubgEvent#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-fileupload": "^1.4.0",
+    "file-upload": "0.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.6.1"
+  }
+}

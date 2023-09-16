@@ -34,14 +34,60 @@ $(document).ready(function () {
     });
 
     $('#gotoReg').click(()=>{
-        var customValue = $('#gotoReg').data("custom-value"); 
-        registerEvent(customValue);
+        var price = $('#gotoReg').data("price"); 
+        var eventName = $('#gotoReg').data("event"); 
+        registerEvent(price,eventName);
     })
+
+
+    $.ajax({
+        url: '/eventhandler/api', // Update with your actual API endpoint
+        method: 'get',
+        success: function (data) {
+            // Check if data is available and is an array
+            if (Array.isArray(data)) {
+                $('.owl-carousel').empty();
+                data.forEach(function (event) {
+                    var eventCard = '<div class="item event-card">' +
+                        '<img src="' + event.ImageURL + '" alt="Event Image" class="event-image">' +
+                        '<div class="event-title">' + event.EventName + '</div>' +
+                        '<div class="event-date">Date: ' + event.EventDate + '</div>' +
+                        '<div class="event-description">' + event.EventDescription + '</div>' +
+                        '<button id="gotoReg" data-price="' + event.Price + '" data-event="' + event.EventName + '" class="event-button">Register Now</button>' +
+                        '</div>';
+
+                    // Append the event card to the carousel
+                    $('.owl-carousel').append(eventCard);
+                });
+            }
+        }
+    });
 
 });
 
-function registerEvent(Price){
+function registerEvent(Price,Event){
     $('.form-container').css('visibility','visible');
     $('#fees').attr('value',Price);
+    $('#EventName').attr('value',Event);
     document.documentElement.scrollTop = 0;
+}
+
+
+function AddAcc(){
+
+    $.ajax({
+        url:'./userhandler/api',
+        data:{
+            Phonenumber: $('#phoneNumber').val(),
+            eventId : $('#EventName').val()
+        },
+        method:'post',
+        success: function (data,status,xhr) {   // success callback function
+            $("#RegBtn").attr("disabled", true);
+            $("#RegBtn").html('Registered successfully');
+        },
+        error: function (jqXhr, textStatus, errorMessage) { // error callback 
+            $('p').append('Error: ' + errorMessage);
+        }
+    })
 }

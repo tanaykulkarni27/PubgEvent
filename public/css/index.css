@@ -29,10 +29,13 @@ body {
 .bannerContainer{
     display: flex;
     flex-direction: row;
+    padding-bottom: 100px;
 }
 
 .bannerContent{
     width: 50%;
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 
 .event_details_container {

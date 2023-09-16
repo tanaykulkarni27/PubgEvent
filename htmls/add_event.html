@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Event</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <!-- Bootstrap CSS link -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.0.4/js.cookie.min.js"
+        integrity="sha512-Nonc2AqL1+VEN+97F3n4YxucBOAL5BgqNwEVc2uUjdKOWAmzwj5ChdJQvN2KldAxkCxE4OenuJ/RL18bWxGGzA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        
+    <script src="/js/addEvent.js"></script>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">  
+                <div class="card">
+                    <div class="card-header">
+                        Add Event
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="eventImage">Event Image</label>
+                            <input type="file" class="form-control-file" id="EventImage">
+                        </div>
+                        <div class="form-group">
+                            <label for="eventDate">Date</label>
+                            <input type="date" class="form-control" id="eventDate">
+                        </div>
+                        <div class="form-group">
+                            <label for="eventTime">Time</label>
+                            <input type="time" class="form-control" id="eventTime">
+                        </div>
+                        <div class="form-group">
+                            <label for="eventName">Event Name</label>
+                            <input type="text" class="form-control" id="Title" placeholder="Enter event name">
+                        </div>
+                        <div class="form-group">
+                            <label for="eventDescription">Event Description</label>
+                            <textarea class="form-control" id="Descript" rows="4"
+                                placeholder="Enter event description"></textarea>
+                        </div>
+                        <button type="button" id="addEventBtn" class="btn btn-primary">Add Event</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script
