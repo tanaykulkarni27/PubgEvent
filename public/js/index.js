@@ -6,8 +6,8 @@ $(document).ready(function () {
 
     $('.event-image').css('height', '150px');
 
-    $('#videoFrame').css('width',$('#frmImg').css('width'));
-    $('#videoFrame').css('height',(window.innerWidth * (9 / 16)) + 'px');
+    $('#videoFrame').css('width', $('#frmImg').css('width'));
+    $('#videoFrame').css('height', (window.innerWidth * (9 / 16)) + 'px');
 
     $(window).on("resize", function () {
         $('#frmImg').css('height', $('.bannerContainer').css('height'));
@@ -33,11 +33,12 @@ $(document).ready(function () {
 
     });
 
-    $('#gotoReg').click(()=>{
-        var price = $('#gotoReg').data("price"); 
-        var eventName = $('#gotoReg').data("event"); 
-        registerEvent(price,eventName);
-    })
+    // Use a delegated event handler to handle clicks on dynamically generated buttons
+    $('.owl-carousel').on('click', '.gotoReg', function () {
+        var price = $(this).data("price");
+        var eventName = $(this).data("event");
+        registerEvent(price, eventName);
+    });
 
 
     $.ajax({
@@ -48,13 +49,19 @@ $(document).ready(function () {
             if (Array.isArray(data)) {
                 $('.owl-carousel').empty();
                 data.forEach(function (event) {
-                    var eventCard = '<div class="item event-card">' +
-                        '<img src="data:image/gif;base64,' + event.EventImage + '" alt="Event Image" class="event-image">' +
-                        '<div class="event-title">' + event.Title + '</div>' +
-                        '<div class="event-date">Date: ' + event.Schedule + '</div>' +
-                        '<div class="event-description">' + event.Descript + '</div>' +
-                        '<button id="gotoReg" data-price="' + event.Price + '" data-event="' + event.Title + '" class="event-button">Register Now</button>' +
-                        '</div>';
+                    var eventCard = $('<div>').addClass('item event-card');
+                    var eventImage = $('<img>').attr('src', 'data:image/gif;base64,' + event.EventImage).addClass('event-image');
+                    var eventTitle = $('<div>').addClass('event-title').text(event.Title);
+                    var eventDate = $('<div>').addClass('event-date').text('Date: ' + event.Schedule);
+                    var eventDescription = $('<div>').addClass('event-description').text(event.Descript);
+                    var registerButton = $('<button>')
+                        .attr('data-price', event.Price)
+                        .attr('data-event', event.Title)
+                        .addClass('event-button gotoReg')
+                        .text('Register Now');
+
+                    // Append the elements to the event card
+                    eventCard.append(eventImage, eventTitle, eventDate, eventDescription, registerButton);
 
                     // Append the event card to the carousel
                     $('.owl-carousel').append(eventCard);
@@ -65,24 +72,24 @@ $(document).ready(function () {
 
 });
 
-function registerEvent(Price,Event){
-    $('.form-container').css('visibility','visible');
-    $('#fees').attr('value',Price);
-    $('#EventName').attr('value',Event);
+function registerEvent(Price, Event) {
+    $('.form-container').css('visibility', 'visible');
+    $('#fees').attr('value', Price);
+    $('#EventName').attr('value', Event);
     document.documentElement.scrollTop = 0;
 }
 
 
-function AddAcc(){
+function AddAcc() {
 
     $.ajax({
-        url:'/userhandler/api',
-        data:{
+        url: '/userhandler/api',
+        data: {
             Phonenumber: $('#phoneNumber').val(),
-            eventId : $('#EventName').val()
+            eventId: $('#EventName').val()
         },
-        method:'post',
-        success: function (data,status,xhr) {   // success callback function
+        method: 'post',
+        success: function (data, status, xhr) {   // success callback function
             $("#RegBtn").attr("disabled", true);
             $("#RegBtn").html('Registered successfully');
         },
