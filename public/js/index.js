@@ -48,7 +48,6 @@ $(document).ready(function () {
             if (Array.isArray(data)) {
                 $('.owl-carousel').empty();
                 data.forEach(function (event) {
-                    console.log(event);
                     var eventCard = '<div class="item event-card">' +
                         '<img src="data:image/gif;base64,' + event.EventImage + '" alt="Event Image" class="event-image">' +
                         '<div class="event-title">' + event.Title + '</div>' +
