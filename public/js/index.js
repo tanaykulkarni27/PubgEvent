@@ -49,11 +49,11 @@ $(document).ready(function () {
                 $('.owl-carousel').empty();
                 data.forEach(function (event) {
                     var eventCard = '<div class="item event-card">' +
-                        '<img src="' + event.ImageURL + '" alt="Event Image" class="event-image">' +
-                        '<div class="event-title">' + event.EventName + '</div>' +
-                        '<div class="event-date">Date: ' + event.EventDate + '</div>' +
-                        '<div class="event-description">' + event.EventDescription + '</div>' +
-                        '<button id="gotoReg" data-price="' + event.Price + '" data-event="' + event.EventName + '" class="event-button">Register Now</button>' +
+                        '<img src="' + event.EventImage + '" alt="Event Image" class="event-image">' +
+                        '<div class="event-title">' + event.Title + '</div>' +
+                        '<div class="event-date">Date: ' + event.Schedule + '</div>' +
+                        '<div class="event-description">' + event.Descript + '</div>' +
+                        '<button id="gotoReg" data-price="' + event.Price + '" data-event="' + event.Title + '" class="event-button">Register Now</button>' +
                         '</div>';
 
                     // Append the event card to the carousel
