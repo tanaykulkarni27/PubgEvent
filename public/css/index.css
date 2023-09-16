@@ -102,11 +102,12 @@ body {
     text-align: center;
     width: 225px;
     padding: 10px;
+    margin-bottom: 30px;
 }
 
 .event-image {
     max-width: 100%;
-    height: auto;
+    height: 250px;
     border-radius: 10px 10px 0 0;
 }
 
